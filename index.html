@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>دورة النظام - الملكة أميرة</title>
+    <title>دورة النظام - التقنية الرقمية</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -14,6 +14,8 @@
             --card-bg: #FFF0F5;
             --text-dark: #1A1A1A;
             --border-pink: #FFC0CB;
+            --green: #2E8B57;
+            --red: #DC143C;
         }
         * {
             box-sizing: border-box;
@@ -46,7 +48,7 @@
         .welcome-card {
             background: rgba(255, 255, 255, 0.95);
             border: 2px solid var(--primary-pink);
-            padding: 40px;
+            padding: 35px;
             border-radius: 25px;
             box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
             max-width: 500px;
@@ -54,13 +56,20 @@
         }
         .welcome-card h1 {
             color: var(--dark-pink);
-            font-size: 2rem;
-            margin-bottom: 10px;
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+        .welcome-card .welcome-info {
+            font-size: 0.95rem;
+            color: var(--dark-pink);
+            font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1.5;
         }
         .welcome-card input {
             width: 100%;
             padding: 12px;
-            margin: 10px 0;
+            margin: 8px 0;
             border: 2px solid var(--border-pink);
             border-radius: 10px;
             font-size: 1rem;
@@ -99,8 +108,9 @@
         }
         header p {
             color: var(--primary-pink);
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 700;
+            margin: 3px 0;
         }
         .container {
             max-width: 900px;
@@ -125,7 +135,6 @@
             font-size: 1.1rem;
             line-height: 1.8;
         }
-        /* زر الفيديو التوضيحي */
         .video-btn-container {
             text-align: center;
             margin-top: 15px;
@@ -144,7 +153,6 @@
         .video-link-btn:hover {
             transform: scale(1.05);
         }
-        /* مراحل دورة النظام */
         .steps-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -183,7 +191,6 @@
             font-size: 1.05rem;
             line-height: 1.7;
         }
-        /* الاختبار */
         .question-box {
             background: white;
             border: 1px solid var(--border-pink);
@@ -222,7 +229,23 @@
             margin: 20px auto 0;
             box-shadow: 0 4px 10px rgba(199, 21, 133, 0.3);
         }
-        /* المساعد الذكي المصغر */
+        #quiz-feedback {
+            margin-top: 15px;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            display: none;
+            border: 1px solid var(--border-pink);
+        }
+        .feedback-item {
+            margin-bottom: 8px;
+            padding: 8px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+        }
+        .correct-ans { background: #E8F8F5; color: var(--green); }
+        .wrong-ans { background: #FDEDEC; color: var(--red); }
+
         .chatbot-box {
             background: white;
             border: 2px solid var(--primary-pink);
@@ -231,13 +254,14 @@
             margin-top: 30px;
         }
         .chatbot-messages {
-            height: 120px;
+            height: 150px;
             overflow-y: auto;
             background: #FFF5F7;
             padding: 10px;
             border-radius: 10px;
             font-size: 0.95rem;
             margin-bottom: 10px;
+            line-height: 1.6;
         }
         .chatbot-input-row {
             display: flex;
@@ -259,7 +283,6 @@
             cursor: pointer;
             font-weight: 700;
         }
-        /* الشهادة */
         .certificate-box {
             background: linear-gradient(135deg, #FFF0F5 0%, #FFE4E1 100%);
             border: 4px double var(--dark-pink);
@@ -290,7 +313,11 @@
     <div id="welcome-screen">
         <div class="welcome-card">
             <h1>🎀✨ منصة دورة النظام ✨🎀</h1>
-            <p style="margin-bottom: 15px; color: #555;">أهلاً بكِ. أدخلي بياناتكِ لاستكشاف المنصة:</p>
+            <div class="welcome-info">
+                بإشراف: أميرة 💖<br>
+                معلمة المادة: أمل الجهني | مادة التقنية الرقمية
+            </div>
+            <p style="margin-bottom: 12px; color: #555; font-size: 0.9rem;">أدخلي بياناتكِ للبدء في المنصة:</p>
             <input type="text" id="user-name" placeholder="أدخلي اسمك الكريم هنا...">
             <input type="text" id="user-class" placeholder="أدخلي فصلك الدراسي هنا...">
             <button class="start-btn" onclick="startPlatform()">ابدأ الرحلة 🚀</button>
@@ -300,6 +327,7 @@
     <!-- الهيدر -->
     <header>
         <h1>دورة النظام التفاعلية</h1>
+        <p>المادة: التقنية الرقمية | معلمة المادة: أمل الجهني</p>
         <p>🎀 بإشراف أميرة 💖</p>
     </header>
 
@@ -336,7 +364,7 @@
             </div>
         </div>
 
-        <!-- القسم الثالث: الاختبار الشامل (5 أسئلة) -->
+        <!-- القسم الثالث: الاختبار الشامل -->
         <div class="section-box">
             <div class="section-title">📝 الاختبار التفاعلي الشامل (5 أسئلة)</div>
             
@@ -376,27 +404,29 @@
             </div>
 
             <button class="submit-quiz-btn" onclick="gradeQuiz()">إرسال الإجابات وإظهار الشهادة 🎓</button>
-            <div id="quiz-result" style="margin-top: 15px; text-align: center; font-weight: bold; font-size: 1.1rem;"></div>
+            <div id="quiz-feedback"></div>
 
-            <!-- الشهادة الشخصية -->
+            <!-- الشهادة الشخصية المتاحة للجميع -->
             <div id="certificate" class="certificate-box">
                 <h2>🏆 شهادة إنجاز تفاعلية 🏆</h2>
                 <p>تمنح هذه الشهادة بكل فخر وإعتزاز إلى الطالبة المتميزة:</p>
                 <div class="cert-name" id="cert-recipient-name">---</div>
                 <p>الفصل الدراسي: <span id="cert-recipient-class" style="font-weight: bold; color: var(--dark-pink);">---</span></p>
-                <p>لاجتيازها الاختبار الشامل لدورة النظام التفاعلي بكفاءة وإتقان تام 🎀</p>
+                <p>مادة التقنية الرقمية | معلمة المادة: أمل الجهني</p>
+                <p id="cert-score-text" style="font-weight: bold; margin: 10px 0; color: var(--dark-pink);"></p>
+                <p>لاجتيازها اختبار دورة النظام التفاعلي بكفاءة وإتقان تام 🎀</p>
                 <p style="font-size: 0.9rem; color: #666; margin-top: 10px;">إشراف: أميرة 💖</p>
             </div>
         </div>
 
-        <!-- المساعد الذكي التفاعلي -->
+        <!-- المساعد الذكي المطور والمتفاعل -->
         <div class="chatbot-box">
-            <div class="section-title" style="font-size: 1.1rem; margin-bottom: 8px;">🤖 مساعدة الموقع الذكية</div>
+            <div class="section-title" style="font-size: 1.1rem; margin-bottom: 8px;">🤖 المساعد الذكي لمادة التقنية الرقمية</div>
             <div class="chatbot-messages" id="chat-messages">
-                أهلاً بكِ! اسأليني أي سؤال عن مراحل دورة النظام وسأجيبك فوراً 💡
+                أهلاً بكِ! اسألي أي سؤال عن مراحل دورة النظام (مثل: التخطيط، التحليل، التصميم، التطوير، الاختبار) وسأجيبك فوراً 💡
             </div>
             <div class="chatbot-input-row">
-                <input type="text" id="chat-input" placeholder="اكتبي سؤالك هنا...">
+                <input type="text" id="chat-input" placeholder="اكتبي سؤالك هنا (مثلاً: ما هي وظيفة التحليل؟)..." onkeypress="handleKeyPress(event)">
                 <button onclick="sendChatMessage()">إرسال</button>
             </div>
         </div>
@@ -467,52 +497,102 @@
             const q5 = document.querySelector('input[name="q5"]:checked');
 
             if (!q1 || !q2 || !q3 || !q4 || !q5) {
-                alert("الرجاء الإجابة على جميع الأسئلة الـ 5 لكي يتم حساب النتيجة وإصدار الشهادة!");
+                alert("الرجاء الإجابة على جميع الأسئلة الـ 5 لكي يتم تصحيح الاختبار وإصدار الشهادة!");
                 return;
             }
 
             let score = 0;
-            if (q1.value === 'correct') score++;
-            if (q2.value === 'correct') score++;
-            if (q3.value === 'correct') score++;
-            if (q4.value === 'correct') score++;
-            if (q5.value === 'correct') score++;
+            let feedbackHTML = "<h4 style='color: var(--dark-pink); margin-bottom: 10px;'>📊 تقرير تصحيح الإجابات:</h4>";
 
-            const resultBox = document.getElementById('quiz-result');
-            const certBox = document.getElementById('certificate');
-
-            if (score >= 4) {
-                resultBox.style.color = '#C71585';
-                resultBox.innerHTML = `🎉 مبروك! نتيجتك هي ${score}/5. لقد اجتزتِ الاختبار بنجاح وتم إصدار شهادتكِ أدناه 🎀`;
-                
-                document.getElementById('cert-recipient-name').innerText = globalName;
-                document.getElementById('cert-recipient-class').innerText = globalClass;
-                certBox.style.display = 'block';
-                certBox.scrollIntoView({ behavior: 'smooth' });
+            if (q1.value === 'correct') {
+                score++;
+                feedbackHTML += `<div class="feedback-item correct-ans">السؤال 1: إجابتك صحيحة ✅ (مرحلة التخطيط ودراسة الجدوى هي البداية).</div>`;
             } else {
-                resultBox.style.color = '#FF1493';
-                resultBox.innerHTML = `❌ نتيجتك هي ${score}/5. حاولي مراجعة المراحل والإجابة مرة أخرى للحصول على الشهادة!`;
-                certBox.style.display = 'none';
+                feedbackHTML += `<div class="feedback-item wrong-ans">السؤال 1: إجابتك خاطئة ❌. الإجابة الصحيحة هي: <b>مرحلة التخطيط ودراسة الجدوى</b>.</div>`;
+            }
+
+            if (q2.value === 'correct') {
+                score++;
+                feedbackHTML += `<div class="feedback-item correct-ans">السؤال 2: إجابتك صحيحة ✅ (مرحلة التحليل).</div>`;
+            } else {
+                feedbackHTML += `<div class="feedback-item wrong-ans">السؤال 2: إجابتك خاطئة ❌. الإجابة الصحيحة هي: <b>مرحلة التحليل</b>.</div>`;
+            }
+
+            if (q3.value === 'correct') {
+                score++;
+                feedbackHTML += `<div class="feedback-item correct-ans">السؤال 3: إجابتك صحيحة ✅ (مرحلة التصميم).</div>`;
+            } else {
+                feedbackHTML += `<div class="feedback-item wrong-ans">السؤال 3: إجابتك خاطئة ❌. الإجابة الصحيحة هي: <b>مرحلة التصميم</b>.</div>`;
+            }
+
+            if (q4.value === 'correct') {
+                score++;
+                feedbackHTML += `<div class="feedback-item correct-ans">السؤال 4: إجابتك صحيحة ✅ (مرحلة التطوير والبناء).</div>`;
+            } else {
+                feedbackHTML += `<div class="feedback-item wrong-ans">السؤال 4: إجابتك خاطئة ❌. الإجابة الصحيحة هي: <b>مرحلة التطوير والبناء</b>.</div>`;
+            }
+
+            if (q5.value === 'correct') {
+                score++;
+                feedbackHTML += `<div class="feedback-item correct-ans">السؤال 5: إجابتك صحيحة ✅ (مرحلة الاختبار والصيانة).</div>`;
+            } else {
+                feedbackHTML += `<div class="feedback-item wrong-ans">السؤال 5: إجابتك خاطئة ❌. الإجابة الصحيحة هي: <b>مرحلة الاختبار والصيانة</b>.</div>`;
+            }
+
+            const feedbackBox = document.getElementById('quiz-feedback');
+            feedbackBox.style.display = 'block';
+            feedbackBox.innerHTML = feedbackHTML;
+
+            const certBox = document.getElementById('certificate');
+            document.getElementById('cert-recipient-name').innerText = globalName;
+            document.getElementById('cert-recipient-class').innerText = globalClass;
+            document.getElementById('cert-score-text').innerText = `النتيجة المحققة: ${score} من 5 أسئلة`;
+            
+            certBox.style.display = 'block';
+            certBox.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendChatMessage();
             }
         }
 
+        // تطوير محرك الذكاء الاصطناعي للإجابة على أي سؤال في الدرس
         function sendChatMessage() {
             const input = document.getElementById('chat-input');
             const chatMsgs = document.getElementById('chat-messages');
-            const txt = input.value.trim();
+            const txt = input.value.trim().toLowerCase();
             if (!txt) return;
 
-            chatMsgs.innerHTML += `<div style="margin-top:5px; color:#C71585;"><b>أنتِ:</b> ${txt}</div>`;
+            chatMsgs.innerHTML += `<div style="margin-top:6px; color:#C71585;"><b>أنتِ:</b> ${input.value}</div>`;
             
-            let reply = "معلومة رائعة! دورة النظام تتكون من 5 مراحل أساسية: التخطيط، التحليل، التصميم، التطوير، والاختبار والصيانة.";
-            if (txt.includes("مرحلة") || txt.includes("كم")) {
-                reply = "عدد مراحل دورة النظام 5 مراحل رئيسية تبدأ بالتخطيط وتنتهي بالصيانة!";
-            } else if (txt.includes("فيديو") || txt.includes("رابط")) {
-                reply = "يمكنك النمط العلوي لمشاهدة فيديو الشرح التفصيلي المرفق في المنصة!";
+            let reply = "سؤال ذكي! تتكون دورة حياة النظام (SDLC) من 5 مراحل رئيسية: 1. التخطيط، 2. التحليل، 3. التصميم، 4. التطوير والبناء، 5. الاختبار والصيانة. هل تودين معرفة تفاصيل إحداها؟";
+
+            if (txt.includes("تخطيط") || txt.includes("اول") || txt.includes("بداية") || txt.includes("مشكلة")) {
+                reply = "مرحلة التخطيط هي حجر الأساس؛ يتم فيها تحديد المشكلة بدقة، دراسة الجدوى (الاقتصادية والفنية)، وتحديد الميزانية والجدول الزمني للمشروع.";
+            } else if (txt.includes("تحليل") || txt.includes("متطلبات") || txt.includes("احتياجات")) {
+                reply = "مرحلة التحليل هي المرحلة الثانية؛ يركز فيها على جمع متطلبات المستخدمين بدقة وتحليل الاحتياجات وتحديد العمليات والوظائف التي سيقدمها النظام.";
+            } else if (txt.includes("تصميم") || txt.includes("مخطط") || txt.includes("واجهات")) {
+                reply = "مرحلة التصميم يتم فيها تحويل الأفكار والمتطلبات إلى مخططات هندسية تشمل: تصميم واجهات المستخدم، هيكل قواعد البيانات، وتجربة الاستخدام.";
+            } else if (txt.includes("تطوير") || txt.includes("بناء") || txt.includes("اكواد") || txt.includes("برمجة")) {
+                reply = "مرحلة التطوير والبناء هي المرحلة الفعلية لكتابة الأكواد البرمجية (مثل HTML, CSS, JavaScript) وبناء وبدء تشغيل وتجميع أجزاء النظام.";
+            } else if (txt.includes("اختبار") || txt.includes("صيانة") || txt.includes("اخطاء") || txt.includes("نشر")) {
+                reply = "مرحلة الاختبار والصيانة تُعنى بفحص النظام لاكتشاف الأخطاء ومعالجتها، ثم رفع الموقع ونشره للمستخدمين، مع الاستمرار في التحديث والصيانة الدورية.";
+            } else if (txt.includes("كم") || txt.includes("عدد") || txt.includes("مراحل")) {
+                reply = "عدد مراحل دورة حياة تطوير النظام (SDLC) هو 5 مراحل أساسية.";
+            } else if (txt.includes("فيديو") || txt.includes("شرح") || txt.includes("رابط")) {
+                reply = "يمكنك النقر على زر 'مشاهدة الشرح المرئي لدورة النظام' الموجود في أعلى الصفحة لمشاهدة المقطع التعليمي!";
+            } else if (txt.includes("اختبار") || txt.includes("شهادة")) {
+                reply = "يمكنك التوجه إلى قسم 'الاختبار التفاعلي الشامل' في منتصف الصفحة، الإجابة على الأسئلة الـ 5، وستحصلين على تقرير التصحيح وشهادة إنجازك الفورية!";
+            } else if (txt.includes("أمل الجهني") || txt.includes("المعلمة")) {
+                reply = "معلمة المادة الفاضلة هي الأستاذة: أمل الجهني، لمادة التقنية الرقمية.";
+            } else if (txt.includes("أميرة") || txt.includes("الاشراف")) {
+                reply = "المنصة العظيمة بإشراف المبدعة الملكة أميرة 👑💖!";
             }
 
             setTimeout(() => {
-                chatMsgs.innerHTML += `<div style="margin-top:5px; color:#333;"><b>المساعد:</b> ${reply}</div>`;
+                chatMsgs.innerHTML += `<div style="margin-top:6px; color:#333; background: #ffffff; padding: 6px 10px; border-radius: 8px; border: 1px solid #FFC0CB;"><b>المساعد الذكي:</b> ${reply}</div>`;
                 chatMsgs.scrollTop = chatMsgs.scrollHeight;
             }, 400);
 
