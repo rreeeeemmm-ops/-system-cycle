@@ -41,7 +41,6 @@
             z-index: 9999;
             text-align: center;
             padding: 20px;
-            transition: opacity 0.8s ease;
         }
         .welcome-card {
             background: rgba(255, 255, 255, 0.95);
@@ -49,42 +48,43 @@
             padding: 40px;
             border-radius: 25px;
             box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
-            max-width: 600px;
+            max-width: 500px;
             width: 100%;
         }
         .welcome-card h1 {
             color: var(--dark-pink);
-            font-size: 2.3rem;
-            margin-bottom: 15px;
+            font-size: 2rem;
+            margin-bottom: 10px;
         }
-        .welcome-card h2 {
-            color: var(--primary-pink);
-            font-size: 1.4rem;
-            margin-bottom: 25px;
+        .welcome-card input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 2px solid var(--border-pink);
+            border-radius: 10px;
+            font-size: 1rem;
+            text-align: center;
+            outline: none;
         }
-        .welcome-card p {
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-            line-height: 1.6;
+        .welcome-card input:focus {
+            border-color: var(--primary-pink);
         }
         .start-btn {
             background: linear-gradient(45deg, var(--primary-pink), var(--dark-pink));
             color: white;
             border: none;
-            padding: 15px 40px;
-            font-size: 1.2rem;
+            padding: 12px 30px;
+            font-size: 1.1rem;
             font-weight: 700;
             border-radius: 50px;
             cursor: pointer;
+            margin-top: 15px;
             box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
-            transition: transform 0.3s;
-        }
-        .start-btn:hover {
-            transform: scale(1.05);
+            width: 100%;
         }
         header {
             text-align: center;
-            padding: 30px 20px;
+            padding: 25px 20px;
             background: #FFF5F7;
             border-bottom: 2px solid var(--border-pink);
             position: sticky;
@@ -93,12 +93,12 @@
         }
         header h1 {
             color: var(--dark-pink);
-            font-size: 2rem;
+            font-size: 1.8rem;
             margin-bottom: 5px;
         }
         header p {
             color: var(--primary-pink);
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 700;
         }
         .container {
@@ -116,18 +116,17 @@
         }
         .section-title {
             color: var(--dark-pink);
-            font-size: 1.5rem;
-            margin-bottom: 20px;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
             font-weight: 900;
         }
         .definition-content {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             line-height: 1.8;
         }
-        /* أزرار المراحل التفاعلية */
         .steps-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 12px;
             margin-top: 15px;
         }
@@ -142,11 +141,10 @@
             color: var(--dark-pink);
             transition: 0.3s;
         }
-        .step-btn:hover, .step-btn.active {
+        .step-btn:hover {
             background: var(--primary-pink);
             color: white;
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
         }
         .stage-details {
             background: white;
@@ -155,36 +153,54 @@
             border-radius: 15px;
             margin-top: 20px;
             display: none;
-            animation: fadeIn 0.5s ease;
         }
         .stage-details h3 {
             color: var(--dark-pink);
             margin-bottom: 10px;
-            font-size: 1.3rem;
         }
         .stage-details p {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             line-height: 1.7;
         }
-        /* الاختبار والشهادة */
-        .quiz-option {
+        /* تصميم الأسئلة والاختبار */
+        .question-box {
             background: white;
             border: 1px solid var(--border-pink);
-            padding: 12px 20px;
-            border-radius: 10px;
-            margin: 10px 0;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+        .question-box p {
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+        }
+        .option-label {
+            display: block;
+            background: #FFF5F7;
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin: 8px 0;
             cursor: pointer;
-            transition: 0.3s;
-            font-weight: 500;
+            border: 1px solid transparent;
+            transition: 0.2s;
         }
-        .quiz-option:hover {
-            border-color: var(--primary-pink);
+        .option-label:hover {
             background: #FFE4E1;
+            border-color: var(--primary-pink);
         }
-        #quiz-result {
-            margin-top: 15px;
-            font-weight: bold;
+        .submit-quiz-btn {
+            background: var(--dark-pink);
+            color: white;
+            border: none;
+            padding: 12px 30px;
             font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 25px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto 0;
+            box-shadow: 0 4px 10px rgba(199, 21, 133, 0.3);
         }
         .certificate-box {
             background: linear-gradient(135deg, #FFF0F5 0%, #FFE4E1 100%);
@@ -201,33 +217,25 @@
             font-size: 2rem;
             margin-bottom: 10px;
         }
-        .certificate-box p {
-            font-size: 1.2rem;
-            margin: 15px 0;
-            color: #333;
-        }
-        .certificate-name {
+        .cert-name {
             color: var(--dark-pink);
-            font-size: 1.8rem;
+            font-size: 1.7rem;
             font-weight: 900;
             margin: 15px 0;
             text-decoration: underline;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
 
-    <!-- شاشة الترحيب الملكية -->
+    <!-- شاشة إدخال الاسم والفصل للترحيب والشهادة -->
     <div id="welcome-screen">
         <div class="welcome-card">
             <h1>🎀✨ منصة دورة النظام ✨🎀</h1>
-            <h2>بإشراف أميرة 💖</h2>
-            <p>أهلاً بكِ في عالم البرمجة والإبداع التفاعلي. استعدي لاستكشاف خرائط المفاهيم التفاعلية واجتياز الاختبار للحصول على الشهادة!</p>
-            <button class="start-btn" onclick="closeWelcome()">ابدأ الرحلة 🚀</button>
+            <p style="margin-bottom: 15px; color: #555;">أهلاً بكِ. أدخلي بياناتكِ لاستكشاف المنصة:</p>
+            <input type="text" id="user-name" placeholder="أدخلي اسمك الكريم هنا...">
+            <input type="text" id="user-class" placeholder="أدخلي فصلك الدراسي هنا...">
+            <button class="start-btn" onclick="startPlatform()">ابدأ الرحلة 🚀</button>
         </div>
     </div>
 
@@ -243,15 +251,14 @@
         <div class="section-box">
             <div class="section-title">📌 مفهوم دورة النظام</div>
             <div class="definition-content">
-                دورة حياة تطوير النظام (SDLC) هي الإطار الشامل الذي يوضح المراحل والخطوات المتبعة لتصميم وتطوير وتشغيل أي نظام معلوماتي بكفاءة عالية.
+                دورة حياة تطوير النظام (SDLC) هي الإطار الشامل والمخطط المتكامل الذي يمر به أي نظام معلوماتي منذ لحظة تفكيره وتخطيطه وحتى تطويره، تشغيله، وصيانته المستمرة.
             </div>
         </div>
 
-        <!-- القسم الثاني: خرائط المفاهيم التفاعلية للمراحل -->
+        <!-- القسم الثاني: خرائط المفاهيم التفاعلية -->
         <div class="section-box">
             <div class="section-title">🗺️ خرائط المفاهيم التفاعلية لمراحل دورة النظام</div>
-            <p style="margin-bottom: 15px;">اضغطي على أي مرحلة أدناه لعرض خريطتها التفصيلية:</p>
-            
+            <p style="margin-bottom: 15px;">انقري على أي مرحلة لعرض خريطتها التفصيلية:</p>
             <div class="steps-grid">
                 <div class="step-btn" onclick="showStage('planning')">1. التخطيط</div>
                 <div class="step-btn" onclick="showStage('analysis')">2. التحليل</div>
@@ -260,64 +267,115 @@
                 <div class="step-btn" onclick="showStage('testing')">5. الاختبار والصيانة</div>
             </div>
 
-            <!-- صندوق عرض تفاصيل المرحلة -->
             <div id="stage-display" class="stage-details">
-                <h3 id="stage-title">اختر مرحلة من الأعلى</h3>
-                <p id="stage-desc">ستظهر التفاصيل وخرائط المفاهيم الخاصة بالمرحلة هنا فور الضغط عليها.</p>
+                <h3 id="stage-title">انقري على إحدى المراحل بالأعلى</h3>
+                <p id="stage-desc">ستظهر خارطة المفاهيم والشرح الخاص بالمرحلة هنا.</p>
             </div>
         </div>
 
-        <!-- القسم الثالث: الاختبار والشهادة -->
+        <!-- القسم الثالث: الاختبار الشامل (5 أسئلة) -->
         <div class="section-box">
-            <div class="section-title">📝 الاختبار التفاعلي وشهادة الإنجاز</div>
-            <p style="margin-bottom: 15px; font-weight: 700;">السؤال: ما هي المرحلة الأولى والأساسية في دورة حياة النظام؟</p>
-            <div class="quiz-option" onclick="answerQuiz(false)">أ) مرحلة التصميم البرمجي</div>
-            <div class="quiz-option" onclick="answerQuiz(true)">ب) مرحلة التخطيط ودراسة الجدوى</div>
-            <div class="quiz-option" onclick="answerQuiz(false)">ج) مرحلة الصيانة والنشر</div>
-            <div id="quiz-result"></div>
+            <div class="section-title">📝 الاختبار التفاعلي الشامل (5 أسئلة)</div>
+            
+            <!-- السؤال الأول -->
+            <div class="question-box">
+                <p>1. ما هي المرحلة الأولى والأساسية في دورة حياة النظام؟</p>
+                <label class="option-label"><input type="radio" name="q1" value="wrong"> أ) مرحلة التصميم</label>
+                <label class="option-label"><input type="radio" name="q1" value="correct"> ب) مرحلة التخطيط ودراسة الجدوى</label>
+                <label class="option-label"><input type="radio" name="q1" value="wrong"> ج) مرحلة البرمجة</label>
+            </div>
 
-            <!-- شهادة التقدير -->
+            <!-- السؤال الثاني -->
+            <div class="question-box">
+                <p>2. في أي مرحلة يتم جمع متطلبات المستخدمين وتحديد وظائف النظام؟</p>
+                <label class="option-label"><input type="radio" name="q2" value="correct"> أ) مرحلة التحليل</label>
+                <label class="option-label"><input type="radio" name="q2" value="wrong"> b) مرحلة الاختبار والصيانة</label>
+                <label class="option-label"><input type="radio" name="q2" value="wrong"> ج) مرحلة التخطيط</label>
+            </div>
+
+            <!-- السؤال الثالث -->
+            <div class="question-box">
+                <p>3. تحويل المتطلبات إلى مخططات هندسية وواجهات مستخدم يتم في مرحلة:</p>
+                <label class="option-label"><input type="radio" name="q3" value="wrong"> أ) التطوير والبناء</label>
+                <label class="option-label"><input type="radio" name="q3" value="correct"> ب) التصميم</label>
+                <label class="option-label"><input type="radio" name="q3" value="wrong"> ج) الصيانة</label>
+            </div>
+
+            <!-- السؤال الرابع -->
+            <div class="question-box">
+                <p>4. كتابة الأكواد البرمجية وتنفيذ النظام فعلياً تتم في مرحلة:</p>
+                <label class="option-label"><input type="radio" name="q4" value="wrong"> أ) التحليل</label>
+                <label class="option-label"><input type="radio" name="q4" value="wrong"> ب) التخطيط</label>
+                <label class="option-label"><input type="radio" name="q4" value="correct"> ج) التطوير والبناء</label>
+            </div>
+
+            <!-- السؤال الخامس -->
+            <div class="question-box">
+                <p>5. فحص الأخطاء ومعالجتها ونشر الموقع للمستخدمين يعتبر من مهام:</p>
+                <label class="option-label"><input type="radio" name="q5" value="correct"> أ) مرحلة الاختبار والصيانة</label>
+                <label class="option-label"><input type="radio" name="q5" value="wrong"> ب) مرحلة التصميم</label>
+                <label class="option-label"><input type="radio" name="q5" value="wrong"> ج) مرحلة جمع البيانات</label>
+            </div>
+
+            <button class="submit-quiz-btn" onclick="gradeQuiz()">إرسال الإجابات وإظهار الشهادة 🎓</button>
+            <div id="quiz-result" style="margin-top: 15px; text-align: center; font-weight: bold; font-size: 1.1rem;"></div>
+
+            <!-- الشهادة الشخصية -->
             <div id="certificate" class="certificate-box">
                 <h2>🏆 شهادة إنجاز تفاعلية 🏆</h2>
-                <p>تمنح هذه الشهادة بكل فخر وإعتزاز إلى المبدعة:</p>
-                <div class="certificate-name">الملكة أميرة 👑💖</div>
-                <p>لاجتيازها اختبار دورة النظام التفاعلي بنجاح تام وإتقان مبهر!</p>
-                <p style="font-size: 0.9rem; color: #666;">تم الإصدار الإكتروني عبر منصة دورة النظام الماسية 🎀</p>
+                <p>تمنح هذه الشهادة بكل فخر وإعتزاز إلى الطالبة المتميزة:</p>
+                <div class="cert-name" id="cert-recipient-name">---</div>
+                <p>الفصل الدراسي: <span id="cert-recipient-class" style="font-weight: bold; color: var(--dark-pink);">---</span></p>
+                <p>لاجتيازها الاختبار الشامل لدورة النظام التفاعلي بكفاءة وإتقان تام 🎀</p>
+                <p style="font-size: 0.9rem; color: #666; margin-top: 10px;">إشراف: أميرة 💖</p>
             </div>
         </div>
 
     </div>
 
     <script>
-        function closeWelcome() {
+        let globalName = "";
+        let globalClass = "";
+
+        function startPlatform() {
+            const nameInput = document.getElementById('user-name').value.trim();
+            const classInput = document.getElementById('user-class').value.trim();
+
+            if (!nameInput || !classInput) {
+                alert("لطفاً، ادخلي الاسم والفصل لكي تتمكني من البدء والحصول على الشهادة!");
+                return;
+            }
+
+            globalName = nameInput;
+            globalClass = classInput;
+
             const welcome = document.getElementById('welcome-screen');
             welcome.style.opacity = '0';
             setTimeout(() => {
                 welcome.style.display = 'none';
-            }, 800);
+            }, 500);
         }
 
-        // بيانات تفاصيل المراحل
         const stagesData = {
             planning: {
                 title: "📌 مرحلة التخطيط (Planning)",
-                desc: "تعتبر حجر الأساس؛ يتم فيها تحديد المشكلة، دراسة الجدوى الاقتصادية والفنية للمشروع، ووضع الجدول الزمني والميزانية المبدئية."
+                desc: "تعتبر نقطة البداية؛ يتم فيها تحديد المشكلة بدقة، دراسة الجدوى الاقتصادية والفنية، ووضع الميزانية والجدول الزمني للمشروع."
             },
             analysis: {
                 title: "📌 مرحلة التحليل (Analysis)",
-                desc: "يتم فيها جمع متطلبات المستخدمين بدقة وتحليل الاحتياجات وتحديد الوظائف التي يجب أن يقدمها النظام الجديد."
+                desc: "التركيز على فهم الاحتياجات، جمع المتطلبات التفصيلية من المستخدمين، وتحديد العمليات التي سيقوم بها النظام."
             },
             design: {
                 title: "📌 مرحلة التصميم (Design)",
-                desc: "تحويل المتطلبات إلى مخططات هندسية تشمل: تصميم واجهات المستخدم، تصميم قواعد البيانات، وتحديد الهيكل البرمجي."
+                desc: "تحويل الأفكار إلى مخططات بصرية وهندسية تشمل: تصميم واجهات المستخدم، هيكل قواعد البيانات، وتجربة الاستخدام."
             },
             development: {
                 title: "📌 مرحلة التطوير والبناء (Development)",
-                desc: "القيام بكتابة الأكواد البرمجية الفعلية وبناء وتطوير النظام باستخدام لغات البرمجة المناسبة (مثل HTML, CSS, JavaScript)."
+                desc: "المرحلة الفعلية لكتابة الأكواد البرمجية (مثل HTML, CSS, JavaScript) وبناء وبدء تشغيل أجزاء النظام."
             },
             testing: {
                 title: "📌 مرحلة الاختبار والصيانة (Testing & Maintenance)",
-                desc: "فحص النظام لاكتشاف الأخطاء ومعالجتها، ثم رفعه ونشره للمستخدمين، مع الاستمرار في التحديث والصيانة الدورية."
+                desc: "فحص النظام واكتشاف الأخطاء البرمجية ومعالجتها، ثم رفع الموقع ونشره للمستخدمين مع الاستمرار في التحديث الدوري."
             }
         };
 
@@ -331,17 +389,39 @@
             descElem.innerHTML = stagesData[stageKey].desc;
         }
 
-        function answerQuiz(isCorrect) {
+        function gradeQuiz() {
+            const q1 = document.querySelector('input[name="q1"]:checked');
+            const q2 = document.querySelector('input[name="q2"]:checked');
+            const q3 = document.querySelector('input[name="q3"]:checked');
+            const q4 = document.querySelector('input[name="q4"]:checked');
+            const q5 = document.querySelector('input[name="q5"]:checked');
+
+            if (!q1 || !q2 || !q3 || !q4 || !q5) {
+                alert("الرجاء الإجابة على جميع الأسئلة الـ 5 لكي يتم حساب النتيجة وإصدار الشهادة!");
+                return;
+            }
+
+            let score = 0;
+            if (q1.value === 'correct') score++;
+            if (q2.value === 'correct') score++;
+            if (q3.value === 'correct') score++;
+            if (q4.value === 'correct') score++;
+            if (q5.value === 'correct') score++;
+
             const resultBox = document.getElementById('quiz-result');
             const certBox = document.getElementById('certificate');
-            
-            if (isCorrect) {
+
+            if (score >= 4) {
                 resultBox.style.color = '#C71585';
-                resultBox.innerHTML = '🎉 إجابة صحيحة 100% يا مبدعة! تم تفعيل شهادة الإنجاز أدناه 🎀';
+                resultBox.innerHTML = `🎉 مبروك! نتيجتك هي ${score}/5. لقد اجتزتِ الاختبار بنجاح وتم إصدار شهادتكِ أدناه 🎀`;
+                
+                document.getElementById('cert-recipient-name').innerText = globalName;
+                document.getElementById('cert-recipient-class').innerText = globalClass;
                 certBox.style.display = 'block';
+                certBox.scrollIntoView({ behavior: 'smooth' });
             } else {
                 resultBox.style.color = '#FF1493';
-                resultBox.innerHTML = '❌ إجابة خاطئة، حاولي اختيار الإجابة الصحيحة!';
+                resultBox.innerHTML = `❌ نتيجتك هي ${score}/5. حاولي مراجعة المراحل والإجابة مرة أخرى للحصول على الشهادة!`;
                 certBox.style.display = 'none';
             }
         }
