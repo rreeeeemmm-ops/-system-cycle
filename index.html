@@ -23,6 +23,9 @@
         }
         body {
             background-color: var(--bg-dark);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(138, 43, 226, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(255, 20, 147, 0.15) 0%, transparent 40%);
             color: var(--text-light);
             min-height: 100vh;
             overflow-x: hidden;
@@ -51,6 +54,7 @@
             box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
             max-width: 600px;
             width: 100%;
+            backdrop-filter: blur(10px);
         }
         .welcome-card h1 {
             color: var(--gold);
@@ -77,12 +81,20 @@
             border-radius: 50px;
             cursor: pointer;
             box-shadow: 0 0 20px rgba(255, 20, 147, 0.5);
+            transition: transform 0.3s;
+        }
+        .start-btn:hover {
+            transform: scale(1.05);
         }
         header {
             text-align: center;
             padding: 30px 20px;
             background: rgba(15, 12, 27, 0.9);
             border-bottom: 1px solid rgba(138, 43, 226, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
         }
         header h1 {
             color: var(--gold);
@@ -104,6 +116,7 @@
             border-radius: 20px;
             padding: 25px;
             margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
         .section-title {
             color: var(--gold);
@@ -115,31 +128,112 @@
             line-height: 1.8;
             color: #E2E8F0;
         }
+        /* تصميم خرائط المفاهيم والخطوات */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .step-card {
+            background: rgba(138, 43, 226, 0.1);
+            border: 1px solid var(--accent);
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .step-card h3 {
+            color: var(--accent);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+        /* تصميم الاختبار السريع */
+        .quiz-option {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 12px 20px;
+            border-radius: 10px;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .quiz-option:hover {
+            border-color: var(--accent);
+            background: rgba(0, 255, 255, 0.1);
+        }
+        #quiz-result {
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
     </style>
 </head>
 <body>
 
+    <!-- شاشة الترحيب الملكية -->
     <div id="welcome-screen">
         <div class="welcome-card">
             <h1>✨ منصة دورة النظام ✨</h1>
             <h2>إعداد المبدعة: الملكة أميرة</h2>
-            <p>أهلاً بكِ في عالم البرمجة والإبداع التفاعلي. استعدي لاستكشاف درس دورة النظام!</p>
+            <p>أهلاً بكِ في عالم البرمجة والإبداع التفاعلي. استعدي لاستكشاف درس دورة النظام بجميع مراحله واختباراته!</p>
             <button class="start-btn" onclick="closeWelcome()">ابدأ الرحلة 🚀</button>
         </div>
     </div>
 
+    <!-- الهيدر -->
     <header>
         <h1>دورة النظام التفاعلية</h1>
         <p>بإشراف وقلم الملكة أميرة 👑</p>
     </header>
 
+    <!-- المحتوى الرئيسي -->
     <div class="container">
+        
+        <!-- القسم الأول: التعريف -->
         <div class="section-box">
             <div class="section-title">📌 مفهوم دورة النظام</div>
             <div class="definition-content">
-                دورة النظام هي الإطار المتكامل الذي يمر به أي نظام معلوماتي منذ لحظة تفكيره وحتى تطويره وتحديثه.
+                دورة النظام (Systems Development Life Cycle - SDLC) هي الإطار المتكامل الذي يمر به أي نظام معلوماتي منذ لحظة التفكير والتخطيط وحتى التطوير، التشغيل، والصيانة والتحديث المستمر.
             </div>
         </div>
+
+        <!-- القسم الثاني: خريطة المفاهيم (مراحل دورة النظام) -->
+        <div class="section-box">
+            <div class="section-title">🗺️ خرائط المفاهيم: مراحل دورة النظام</div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <h3>1. التخطيط</h3>
+                    <p>تحديد المشكلة ودراسة الجدوى وتكلفة المشروع.</p>
+                </div>
+                <div class="step-card">
+                    <h3>2. التحليل</h3>
+                    <p>جمع المتطلبات وتحديد وظائف النظام بدقة.</p>
+                </div>
+                <div class="step-card">
+                    <h3>3. التصميم</h3>
+                    <p>تصميم واجهات المستخدم وقواعد البيانات والهيكل.</p>
+                </div>
+                <div class="step-card">
+                    <h3>4. التطوير والبناء</h3>
+                    <p>كتابة الأكواد البرمجية وتنفيذ النظام فعلياً.</p>
+                </div>
+                <div class="step-card">
+                    <h3>5. الاختبار والصيانة</h3>
+                    <p>فحص الأخطاء، نشر الموقع، والتحسين المستمر.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- القسم الثالث: الاختبار التفاعلي -->
+        <div class="section-box">
+            <div class="section-title">📝 اختبار سريع وتقييم ذاتي</div>
+            <p style="margin-bottom: 15px; font-size: 1.1rem;">ما هي أول مرحلة من مراحل دورة النظام الأساسية؟</p>
+            <div class="quiz-option" onclick="checkAnswer(false)">أ) مرحلة التصميم</div>
+            <div class="quiz-option" onclick="checkAnswer(true)">ب) مرحلة التخطيط ودراسة الجدوى</div>
+            <div class="quiz-option" onclick="checkAnswer(false)">ج) مرحلة البرمجة والكتابة</div>
+            <div id="quiz-result"></div>
+        </div>
+
     </div>
 
     <script>
@@ -149,6 +243,17 @@
             setTimeout(() => {
                 welcome.style.display = 'none';
             }, 800);
+        }
+
+        function checkAnswer(isCorrect) {
+            const result = document.getElementById('quiz-result');
+            if (isCorrect) {
+                result.style.color = '#00FFFF';
+                result.innerHTML = '🎉 إجابة صحيحة وصائبة يا مبدعة! مرحلة التخطيط هي البداية دائماً.';
+            } else {
+                result.style.color = '#FF1493';
+                result.innerHTML = '❌ إجابة خاطئة، حاولي مرة أخرى!';
+            }
         }
     </script>
 </body>
