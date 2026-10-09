@@ -44,7 +44,7 @@
             transition: opacity 0.8s ease;
         }
         .welcome-card {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             border: 2px solid var(--primary-pink);
             padding: 40px;
             border-radius: 25px;
@@ -54,19 +54,18 @@
         }
         .welcome-card h1 {
             color: var(--dark-pink);
-            font-size: 2.5rem;
+            font-size: 2.3rem;
             margin-bottom: 15px;
         }
         .welcome-card h2 {
             color: var(--primary-pink);
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             margin-bottom: 25px;
         }
         .welcome-card p {
             font-size: 1.1rem;
             margin-bottom: 30px;
             line-height: 1.6;
-            color: var(--text-dark);
         }
         .start-btn {
             background: linear-gradient(45deg, var(--primary-pink), var(--dark-pink));
@@ -103,7 +102,7 @@
             font-weight: 700;
         }
         .container {
-            max-width: 1000px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 20px;
         }
@@ -122,31 +121,52 @@
             font-weight: 900;
         }
         .definition-content {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             line-height: 1.8;
-            color: var(--text-dark);
         }
+        /* أزرار المراحل التفاعلية */
         .steps-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 12px;
             margin-top: 15px;
         }
-        .step-card {
+        .step-btn {
             background: white;
-            border: 1px solid var(--primary-pink);
+            border: 2px solid var(--primary-pink);
             padding: 15px;
-            border-radius: 12px;
+            border-radius: 15px;
             text-align: center;
-        }
-        .step-card h3 {
+            cursor: pointer;
+            font-weight: 700;
             color: var(--dark-pink);
-            margin-bottom: 8px;
+            transition: 0.3s;
+        }
+        .step-btn:hover, .step-btn.active {
+            background: var(--primary-pink);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+        }
+        .stage-details {
+            background: white;
+            border: 2px dashed var(--primary-pink);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        .stage-details h3 {
+            color: var(--dark-pink);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        .stage-details p {
             font-size: 1.1rem;
+            line-height: 1.7;
         }
-        .step-card p {
-            color: var(--text-dark);
-        }
+        /* الاختبار والشهادة */
         .quiz-option {
             background: white;
             border: 1px solid var(--border-pink);
@@ -155,7 +175,6 @@
             margin: 10px 0;
             cursor: pointer;
             transition: 0.3s;
-            color: var(--text-dark);
             font-weight: 500;
         }
         .quiz-option:hover {
@@ -167,6 +186,37 @@
             font-weight: bold;
             font-size: 1.1rem;
         }
+        .certificate-box {
+            background: linear-gradient(135deg, #FFF0F5 0%, #FFE4E1 100%);
+            border: 4px double var(--dark-pink);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 25px;
+            display: none;
+            box-shadow: 0 10px 30px rgba(199, 21, 133, 0.2);
+        }
+        .certificate-box h2 {
+            color: var(--dark-pink);
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .certificate-box p {
+            font-size: 1.2rem;
+            margin: 15px 0;
+            color: #333;
+        }
+        .certificate-name {
+            color: var(--dark-pink);
+            font-size: 1.8rem;
+            font-weight: 900;
+            margin: 15px 0;
+            text-decoration: underline;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body>
@@ -176,7 +226,7 @@
         <div class="welcome-card">
             <h1>🎀✨ منصة دورة النظام ✨🎀</h1>
             <h2>بإشراف أميرة 💖</h2>
-            <p>أهلاً بكِ في عالم البرمجة والإبداع التفاعلي. استعدي لاستكشاف درس دورة النظام بجميع مراحله واختباراته!</p>
+            <p>أهلاً بكِ في عالم البرمجة والإبداع التفاعلي. استعدي لاستكشاف خرائط المفاهيم التفاعلية واجتياز الاختبار للحصول على الشهادة!</p>
             <button class="start-btn" onclick="closeWelcome()">ابدأ الرحلة 🚀</button>
         </div>
     </div>
@@ -187,52 +237,53 @@
         <p>🎀 بإشراف أميرة 💖</p>
     </header>
 
-    <!-- المحتوى الرئيسي -->
     <div class="container">
         
         <!-- القسم الأول: التعريف -->
         <div class="section-box">
             <div class="section-title">📌 مفهوم دورة النظام</div>
             <div class="definition-content">
-                دورة النظام (Systems Development Life Cycle - SDLC) هي الإطار المتكامل الذي يمر به أي نظام معلوماتي منذ لحظة التفكير والتخطيط وحتى التطوير، التشغيل، والصيانة والتحديث المستمر.
+                دورة حياة تطوير النظام (SDLC) هي الإطار الشامل الذي يوضح المراحل والخطوات المتبعة لتصميم وتطوير وتشغيل أي نظام معلوماتي بكفاءة عالية.
             </div>
         </div>
 
-        <!-- القسم الثاني: خريطة المفاهيم (مراحل دورة النظام) -->
+        <!-- القسم الثاني: خرائط المفاهيم التفاعلية للمراحل -->
         <div class="section-box">
-            <div class="section-title">🗺️ خرائط المفاهيم: مراحل دورة النظام</div>
+            <div class="section-title">🗺️ خرائط المفاهيم التفاعلية لمراحل دورة النظام</div>
+            <p style="margin-bottom: 15px;">اضغطي على أي مرحلة أدناه لعرض خريطتها التفصيلية:</p>
+            
             <div class="steps-grid">
-                <div class="step-card">
-                    <h3>1. التخطيط</h3>
-                    <p>تحديد المشكلة ودراسة الجدوى وتكلفة المشروع.</p>
-                </div>
-                <div class="step-card">
-                    <h3>2. التحليل</h3>
-                    <p>جمع المتطلبات وتحديد وظائف النظام بدقة.</p>
-                </div>
-                <div class="step-card">
-                    <h3>3. التصميم</h3>
-                    <p>تصميم واجهات المستخدم وقواعد البيانات والهيكل.</p>
-                </div>
-                <div class="step-card">
-                    <h3>4. التطوير والبناء</h3>
-                    <p>كتابة الأكواد البرمجية وتنفيذ النظام فعلياً.</p>
-                </div>
-                <div class="step-card">
-                    <h3>5. الاختبار والصيانة</h3>
-                    <p>فحص الأخطاء، نشر الموقع، والتحسين المستمر.</p>
-                </div>
+                <div class="step-btn" onclick="showStage('planning')">1. التخطيط</div>
+                <div class="step-btn" onclick="showStage('analysis')">2. التحليل</div>
+                <div class="step-btn" onclick="showStage('design')">3. التصميم</div>
+                <div class="step-btn" onclick="showStage('development')">4. التطوير والبناء</div>
+                <div class="step-btn" onclick="showStage('testing')">5. الاختبار والصيانة</div>
+            </div>
+
+            <!-- صندوق عرض تفاصيل المرحلة -->
+            <div id="stage-display" class="stage-details">
+                <h3 id="stage-title">اختر مرحلة من الأعلى</h3>
+                <p id="stage-desc">ستظهر التفاصيل وخرائط المفاهيم الخاصة بالمرحلة هنا فور الضغط عليها.</p>
             </div>
         </div>
 
-        <!-- القسم الثالث: الاختبار التفاعلي -->
+        <!-- القسم الثالث: الاختبار والشهادة -->
         <div class="section-box">
-            <div class="section-title">📝 اختبار سريع وتقييم ذاتي</div>
-            <p style="margin-bottom: 15px; font-size: 1.1rem; color: var(--text-dark);">ما هي أول مرحلة من مراحل دورة النظام الأساسية؟</p>
-            <div class="quiz-option" onclick="checkAnswer(false)">أ) مرحلة التصميم</div>
-            <div class="quiz-option" onclick="checkAnswer(true)">ب) مرحلة التخطيط ودراسة الجدوى</div>
-            <div class="quiz-option" onclick="checkAnswer(false)">ج) مرحلة البرمجة والكتابة</div>
+            <div class="section-title">📝 الاختبار التفاعلي وشهادة الإنجاز</div>
+            <p style="margin-bottom: 15px; font-weight: 700;">السؤال: ما هي المرحلة الأولى والأساسية في دورة حياة النظام؟</p>
+            <div class="quiz-option" onclick="answerQuiz(false)">أ) مرحلة التصميم البرمجي</div>
+            <div class="quiz-option" onclick="answerQuiz(true)">ب) مرحلة التخطيط ودراسة الجدوى</div>
+            <div class="quiz-option" onclick="answerQuiz(false)">ج) مرحلة الصيانة والنشر</div>
             <div id="quiz-result"></div>
+
+            <!-- شهادة التقدير -->
+            <div id="certificate" class="certificate-box">
+                <h2>🏆 شهادة إنجاز تفاعلية 🏆</h2>
+                <p>تمنح هذه الشهادة بكل فخر وإعتزاز إلى المبدعة:</p>
+                <div class="certificate-name">الملكة أميرة 👑💖</div>
+                <p>لاجتيازها اختبار دورة النظام التفاعلي بنجاح تام وإتقان مبهر!</p>
+                <p style="font-size: 0.9rem; color: #666;">تم الإصدار الإكتروني عبر منصة دورة النظام الماسية 🎀</p>
+            </div>
         </div>
 
     </div>
@@ -246,14 +297,52 @@
             }, 800);
         }
 
-        function checkAnswer(isCorrect) {
-            const result = document.getElementById('quiz-result');
+        // بيانات تفاصيل المراحل
+        const stagesData = {
+            planning: {
+                title: "📌 مرحلة التخطيط (Planning)",
+                desc: "تعتبر حجر الأساس؛ يتم فيها تحديد المشكلة، دراسة الجدوى الاقتصادية والفنية للمشروع، ووضع الجدول الزمني والميزانية المبدئية."
+            },
+            analysis: {
+                title: "📌 مرحلة التحليل (Analysis)",
+                desc: "يتم فيها جمع متطلبات المستخدمين بدقة وتحليل الاحتياجات وتحديد الوظائف التي يجب أن يقدمها النظام الجديد."
+            },
+            design: {
+                title: "📌 مرحلة التصميم (Design)",
+                desc: "تحويل المتطلبات إلى مخططات هندسية تشمل: تصميم واجهات المستخدم، تصميم قواعد البيانات، وتحديد الهيكل البرمجي."
+            },
+            development: {
+                title: "📌 مرحلة التطوير والبناء (Development)",
+                desc: "القيام بكتابة الأكواد البرمجية الفعلية وبناء وتطوير النظام باستخدام لغات البرمجة المناسبة (مثل HTML, CSS, JavaScript)."
+            },
+            testing: {
+                title: "📌 مرحلة الاختبار والصيانة (Testing & Maintenance)",
+                desc: "فحص النظام لاكتشاف الأخطاء ومعالجتها، ثم رفعه ونشره للمستخدمين، مع الاستمرار في التحديث والصيانة الدورية."
+            }
+        };
+
+        function showStage(stageKey) {
+            const displayBox = document.getElementById('stage-display');
+            const titleElem = document.getElementById('stage-title');
+            const descElem = document.getElementById('stage-desc');
+            
+            displayBox.style.display = 'block';
+            titleElem.innerHTML = stagesData[stageKey].title;
+            descElem.innerHTML = stagesData[stageKey].desc;
+        }
+
+        function answerQuiz(isCorrect) {
+            const resultBox = document.getElementById('quiz-result');
+            const certBox = document.getElementById('certificate');
+            
             if (isCorrect) {
-                result.style.color = '#C71585';
-                result.innerHTML = '🎉 إجابة صحيحة وصائبة يا مبدعة! مرحلة التخطيط هي البداية دائماً 💖';
+                resultBox.style.color = '#C71585';
+                resultBox.innerHTML = '🎉 إجابة صحيحة 100% يا مبدعة! تم تفعيل شهادة الإنجاز أدناه 🎀';
+                certBox.style.display = 'block';
             } else {
-                result.style.color = '#FF1493';
-                result.innerHTML = '❌ إجابة خاطئة، حاولي مرة أخرى!';
+                resultBox.style.color = '#FF1493';
+                resultBox.innerHTML = '❌ إجابة خاطئة، حاولي اختيار الإجابة الصحيحة!';
+                certBox.style.display = 'none';
             }
         }
     </script>
