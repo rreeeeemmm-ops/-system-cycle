@@ -26,6 +26,7 @@
             color: var(--text-dark);
             min-height: 100vh;
             overflow-x: hidden;
+            padding-bottom: 50px;
         }
         #welcome-screen {
             position: fixed;
@@ -124,6 +125,26 @@
             font-size: 1.1rem;
             line-height: 1.8;
         }
+        /* زر الفيديو التوضيحي */
+        .video-btn-container {
+            text-align: center;
+            margin-top: 15px;
+        }
+        .video-link-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #FF1493, #C71585);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(255, 20, 147, 0.3);
+            transition: 0.3s;
+        }
+        .video-link-btn:hover {
+            transform: scale(1.05);
+        }
+        /* مراحل دورة النظام */
         .steps-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -162,7 +183,7 @@
             font-size: 1.05rem;
             line-height: 1.7;
         }
-        /* تصميم الأسئلة والاختبار */
+        /* الاختبار */
         .question-box {
             background: white;
             border: 1px solid var(--border-pink);
@@ -173,7 +194,6 @@
         .question-box p {
             font-weight: 700;
             margin-bottom: 12px;
-            color: var(--text-dark);
         }
         .option-label {
             display: block;
@@ -202,6 +222,44 @@
             margin: 20px auto 0;
             box-shadow: 0 4px 10px rgba(199, 21, 133, 0.3);
         }
+        /* المساعد الذكي المصغر */
+        .chatbot-box {
+            background: white;
+            border: 2px solid var(--primary-pink);
+            border-radius: 15px;
+            padding: 15px;
+            margin-top: 30px;
+        }
+        .chatbot-messages {
+            height: 120px;
+            overflow-y: auto;
+            background: #FFF5F7;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
+        .chatbot-input-row {
+            display: flex;
+            gap: 8px;
+        }
+        .chatbot-input-row input {
+            flex: 1;
+            padding: 8px 12px;
+            border: 1px solid var(--border-pink);
+            border-radius: 8px;
+            outline: none;
+        }
+        .chatbot-input-row button {
+            background: var(--primary-pink);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 700;
+        }
+        /* الشهادة */
         .certificate-box {
             background: linear-gradient(135deg, #FFF0F5 0%, #FFE4E1 100%);
             border: 4px double var(--dark-pink);
@@ -228,7 +286,7 @@
 </head>
 <body>
 
-    <!-- شاشة إدخال الاسم والفصل للترحيب والشهادة -->
+    <!-- شاشة إدخال الاسم والفصل -->
     <div id="welcome-screen">
         <div class="welcome-card">
             <h1>🎀✨ منصة دورة النظام ✨🎀</h1>
@@ -247,11 +305,16 @@
 
     <div class="container">
         
-        <!-- القسم الأول: التعريف -->
+        <!-- القسم الأول: التعريف وفيديو الشرح -->
         <div class="section-box">
-            <div class="section-title">📌 مفهوم دورة النظام</div>
-            <div class="definition-content">
+            <div class="section-title">📌 مفهوم دورة النظام وشرح الفيديو</div>
+            <div class="definition-content" style="margin-bottom: 15px;">
                 دورة حياة تطوير النظام (SDLC) هي الإطار الشامل والمخطط المتكامل الذي يمر به أي نظام معلوماتي منذ لحظة تفكيره وتخطيطه وحتى تطويره، تشغيله، وصيانته المستمرة.
+            </div>
+            <div class="video-btn-container">
+                <a href="https://youtu.be/GreLNQeW5b4?si=X-D6TdiH_XQz0ZCA" target="_blank" class="video-link-btn">
+                    📺 مشاهدة الشرح المرئي لدورة النظام 🎥
+                </a>
             </div>
         </div>
 
@@ -277,7 +340,6 @@
         <div class="section-box">
             <div class="section-title">📝 الاختبار التفاعلي الشامل (5 أسئلة)</div>
             
-            <!-- السؤال الأول -->
             <div class="question-box">
                 <p>1. ما هي المرحلة الأولى والأساسية في دورة حياة النظام؟</p>
                 <label class="option-label"><input type="radio" name="q1" value="wrong"> أ) مرحلة التصميم</label>
@@ -285,15 +347,13 @@
                 <label class="option-label"><input type="radio" name="q1" value="wrong"> ج) مرحلة البرمجة</label>
             </div>
 
-            <!-- السؤال الثاني -->
             <div class="question-box">
                 <p>2. في أي مرحلة يتم جمع متطلبات المستخدمين وتحديد وظائف النظام؟</p>
                 <label class="option-label"><input type="radio" name="q2" value="correct"> أ) مرحلة التحليل</label>
-                <label class="option-label"><input type="radio" name="q2" value="wrong"> b) مرحلة الاختبار والصيانة</label>
+                <label class="option-label"><input type="radio" name="q2" value="wrong"> ب) مرحلة الاختبار والصيانة</label>
                 <label class="option-label"><input type="radio" name="q2" value="wrong"> ج) مرحلة التخطيط</label>
             </div>
 
-            <!-- السؤال الثالث -->
             <div class="question-box">
                 <p>3. تحويل المتطلبات إلى مخططات هندسية وواجهات مستخدم يتم في مرحلة:</p>
                 <label class="option-label"><input type="radio" name="q3" value="wrong"> أ) التطوير والبناء</label>
@@ -301,7 +361,6 @@
                 <label class="option-label"><input type="radio" name="q3" value="wrong"> ج) الصيانة</label>
             </div>
 
-            <!-- السؤال الرابع -->
             <div class="question-box">
                 <p>4. كتابة الأكواد البرمجية وتنفيذ النظام فعلياً تتم في مرحلة:</p>
                 <label class="option-label"><input type="radio" name="q4" value="wrong"> أ) التحليل</label>
@@ -309,7 +368,6 @@
                 <label class="option-label"><input type="radio" name="q4" value="correct"> ج) التطوير والبناء</label>
             </div>
 
-            <!-- السؤال الخامس -->
             <div class="question-box">
                 <p>5. فحص الأخطاء ومعالجتها ونشر الموقع للمستخدمين يعتبر من مهام:</p>
                 <label class="option-label"><input type="radio" name="q5" value="correct"> أ) مرحلة الاختبار والصيانة</label>
@@ -328,6 +386,18 @@
                 <p>الفصل الدراسي: <span id="cert-recipient-class" style="font-weight: bold; color: var(--dark-pink);">---</span></p>
                 <p>لاجتيازها الاختبار الشامل لدورة النظام التفاعلي بكفاءة وإتقان تام 🎀</p>
                 <p style="font-size: 0.9rem; color: #666; margin-top: 10px;">إشراف: أميرة 💖</p>
+            </div>
+        </div>
+
+        <!-- المساعد الذكي التفاعلي -->
+        <div class="chatbot-box">
+            <div class="section-title" style="font-size: 1.1rem; margin-bottom: 8px;">🤖 مساعدة الموقع الذكية</div>
+            <div class="chatbot-messages" id="chat-messages">
+                أهلاً بكِ! اسأليني أي سؤال عن مراحل دورة النظام وسأجيبك فوراً 💡
+            </div>
+            <div class="chatbot-input-row">
+                <input type="text" id="chat-input" placeholder="اكتبي سؤالك هنا...">
+                <button onclick="sendChatMessage()">إرسال</button>
             </div>
         </div>
 
@@ -371,7 +441,7 @@
             },
             development: {
                 title: "📌 مرحلة التطوير والبناء (Development)",
-                desc: "المرحلة الفعلية لكتابة الأكواد البرمجية (مثل HTML, CSS, JavaScript) وبناء وبدء تشغيل أجزاء النظام."
+                desc: "المرحلة الفعلية لكتابة الأكواد البرمجية وبناء وبدء تشغيل أجزاء النظام."
             },
             testing: {
                 title: "📌 مرحلة الاختبار والصيانة (Testing & Maintenance)",
@@ -424,6 +494,30 @@
                 resultBox.innerHTML = `❌ نتيجتك هي ${score}/5. حاولي مراجعة المراحل والإجابة مرة أخرى للحصول على الشهادة!`;
                 certBox.style.display = 'none';
             }
+        }
+
+        function sendChatMessage() {
+            const input = document.getElementById('chat-input');
+            const chatMsgs = document.getElementById('chat-messages');
+            const txt = input.value.trim();
+            if (!txt) return;
+
+            chatMsgs.innerHTML += `<div style="margin-top:5px; color:#C71585;"><b>أنتِ:</b> ${txt}</div>`;
+            
+            let reply = "معلومة رائعة! دورة النظام تتكون من 5 مراحل أساسية: التخطيط، التحليل، التصميم، التطوير، والاختبار والصيانة.";
+            if (txt.includes("مرحلة") || txt.includes("كم")) {
+                reply = "عدد مراحل دورة النظام 5 مراحل رئيسية تبدأ بالتخطيط وتنتهي بالصيانة!";
+            } else if (txt.includes("فيديو") || txt.includes("رابط")) {
+                reply = "يمكنك النمط العلوي لمشاهدة فيديو الشرح التفصيلي المرفق في المنصة!";
+            }
+
+            setTimeout(() => {
+                chatMsgs.innerHTML += `<div style="margin-top:5px; color:#333;"><b>المساعد:</b> ${reply}</div>`;
+                chatMsgs.scrollTop = chatMsgs.scrollHeight;
+            }, 400);
+
+            input.value = "";
+            chatMsgs.scrollTop = chatMsgs.scrollHeight;
         }
     </script>
 </body>
