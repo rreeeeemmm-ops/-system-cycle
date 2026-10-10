@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الدليل المثالي لمشروع التقنية الرقمية - مخطط الصيانة</title>
+    <!-- Tailwind CSS -->
+    <script src="[suspicious link removed]"></script>
+    <!-- الخط العربي (Cairo) -->
+    <link href="[suspicious link removed]" rel="stylesheet">
+    <style>
+        body { font-family: 'Cairo', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col justify-between">
+
+    <!-- الهيدر والترويسة -->
+    <header class="bg-gradient-to-r from-indigo-700 via-purple-700 to-pink-600 text-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-6 py-10 text-center">
+            <span class="bg-white/20 text-xs px-4 py-1.5 rounded-full font-bold uppercase tracking-wide border border-white/30">مادة التقنية الرقمية - الثالث الثانوي</span>
+            <h1 class="text-3xl md:text-5xl font-extrabold mt-4 mb-3">دليلك المثالي للحصول على الـ 15 درجة كاملة 🎯</h1>
+            <p class="text-indigo-100 text-lg max-w-2xl mx-auto">خطوة بخطوة نحو تصميم «مخطط الصيانة» باستخدام موقع [تمّت إزالة الرابط المريب] بأعلى معايير الجودة التقنية.</p>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 py-10 space-y-12 flex-grow w-full">
+
+        <!-- قسم أزرار التوجيه السريع -->
+        <section class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+            <h2 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                🚀 أزرار التوجيه السريع
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <button onclick="openModal('explainModal')" class="flex items-center justify-center gap-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 px-6 rounded-xl transition duration-200 shadow-md">
+                    🎬 شرح المشروع (محاكاة)
+                </button>
+                <button onclick="openModal('detailsModal')" class="flex items-center justify-center gap-3 bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 px-6 rounded-xl transition duration-200 shadow-md">
+                    📋 تفاصيل الشروط والتعليمات
+                </button>
+                <button onclick="openModal('uploadModal')" class="flex items-center justify-center gap-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 px-6 rounded-xl transition duration-200 shadow-md">
+                    📤 رفع وتسليم المشروع
+                </button>
+            </div>
+        </section>
+
+        <!-- قسم خطوات العمل الذكية -->
+        <section class="space-y-6">
+            <div class="border-r-4 border-indigo-600 pr-4">
+                <h2 class="text-2xl font-extrabold text-slate-900">1. خطوات العمل الذكية (المطلوب بالتفصيل)</h2>
+                <p class="text-slate-600">اتبعي هذه الخطوات الست بترتيب متسلسل لإنجاز المخطط بنجاح:</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- خطوة 1 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="w-10 h-10 bg-indigo-100 text-indigo-700 font-extrabold rounded-xl flex items-center justify-center mb-4 text-lg">1</div>
+                    <h3 class="font-bold text-lg mb-2 text-slate-900">إعداد الملف</h3>
+                    <p class="text-sm text-slate-600">افتحي موقع <strong>[تمّت إزالة الرابط المريب]</strong> وقومي بتسمية الملف بالصيغة: <code class="bg-slate-100 px-2 py-1 rounded text-indigo-600">اسمي_مخطط_الصيانة</code></p>
+                </div>
+                <!-- خطوة 2 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="w-10 h-10 bg-indigo-100 text-indigo-700 font-extrabold rounded-xl flex items-center justify-center mb-4 text-lg">2</div>
+                    <h3 class="font-bold text-lg mb-2 text-slate-900">البداية والنهاية 🛑</h3>
+                    <p class="text-sm text-slate-600">أدرجي نقطتي البداية والنهاية باستخدام <strong>الشكل البيضاوي</strong> المحدد لنهاية المخطط وبدايته.</p>
+                </div>
+                <!-- خطوة 3 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="w-10 h-10 bg-indigo-100 text-indigo-700 font-extrabold rounded-xl flex items-center justify-center mb-4 text-lg">3</div>
+                    <h3 class="font-bold text-lg mb-2 text-slate-900">إدراج العمليات 🟦</h3>
+                    <p class="text-sm text-slate-600">أدرجي <strong>عمليتين على الأقل</strong> (مثل: فحص الجهاز، تنظيف الملفات) باستخدام <strong>الشكل المستطيل</strong>.</p>
+                </div>
+                <!-- خطوة 4 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="w-10 h-10 bg-indigo-100 text-indigo-700 font-extrabold rounded-xl flex items-center justify-center mb-4 text-lg">4</div>
+                    <h3 class="font-bold text-lg mb-2 text-slate-900">نقطة القرار 🔷</h3>
+                    <p class="text-sm text-slate-600">أضيفي نقطة قرار باستخدام <strong>شكل المعين</strong> وحددي مسارين متفرعين واضحين (<strong>نعم / لا</strong>).</p>
+                </div>
+                <!-- خطوة 5 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="w-10 h-10 bg-indigo-100 text-indigo-700 font-extrabold rounded-xl flex items-center justify-center mb-4 text-lg">5</div>
+                    <h3 class="font-bold text-lg mb-2 text-slate-900">توصيل الأسهم ➡️</h3>
+                    <p class="text-sm text-slate-600">وصّلي جميع الأشكال بأسهم واضحة ومحددة الاتجاه فوق المسارات لضمان تدفق منطقي.</p>
+                </div>
+                <!-- خطوة 6 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="w-10 h-10 bg-indigo-100 text-indigo-700 font-extrabold rounded-xl flex items-center justify-center mb-4 text-lg">6</div>
+                    <h3 class="font-bold text-lg mb-2 text-slate-900">التصدير والرفع 📁</h3>
+                    <p class="text-sm text-slate-600">صَدّري المخطط النهائي بصيغة <strong>صورة (PNG)</strong> أو <strong>PDF</strong> لرفعه وتسليمه للمعلمة.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم معايير القبول وشريط الجاهزية -->
+        <section class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm space-y-6">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-6">
+                <div>
+                    <h2 class="text-2xl font-extrabold text-slate-900">2. معايير القبول والدرجة الكاملة (Checklist)</h2>
+                    <p class="text-slate-600">قيمي عملكِ بنفسكِ قبل التسليم لضمان الحصول على الـ 15 درجة كاملة:</p>
+                </div>
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 min-w-[240px] text-center">
+                    <span class="text-xs text-slate-500 font-bold block mb-1">نسبة جاهزية المشروع</span>
+                    <div class="text-2xl font-black text-indigo-600" id="progressText">0%</div>
+                    <div class="w-full bg-slate-200 h-2.5 rounded-full mt-2 overflow-hidden">
+                        <div id="progressBar" class="bg-indigo-600 h-2.5 rounded-full transition-all duration-300 w-0"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="checklist">
+                <label class="flex items-start gap-3 p-4 rounded-xl border border-slate-100 hover:bg-slate-50 cursor-pointer transition">
+                    <input type="checkbox" class="check-item w-5 h-5 mt-0.5 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500" onchange="updateProgress()">
+                    <div>
+                        <span class="font-bold block text-slate-800">🛑 الشكل البيضاوي:</span>
+                        <span class="text-sm text-slate-600">مُستخدم خصيصاً وصحيحاً للبداية والنهاية فقط.</span>
+                    </div>
+                </label>
+                <label class="flex items-start gap-3 p-4 rounded-xl border border-slate-100 hover:bg-slate-50 cursor-pointer transition">
+                    <input type="checkbox" class="check-item w-5 h-5 mt-0.5 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500" onchange="updateProgress()">
+                    <div>
+                        <span class="font-bold block text-slate-800">🟦 الشكل المستطيل:</span>
+                        <span class="text-sm text-slate-600">مُستخدم لإدراج العمليات والإجراءات (عمليتين على الأقل).</span>
+                    </div>
+                </label>
+                <label class="flex items-start gap-3 p-4 rounded-xl border border-slate-100 hover:bg-slate-50 cursor-pointer transition">
+                    <input type="checkbox" class="check-item w-5 h-5 mt-0.5 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500" onchange="updateProgress()">
+                    <div>
+                        <span class="font-bold block text-slate-800">🔷 شكل المعين:</span>
+                        <span class="text-sm text-slate-600">مُستخدم لاتخاذ القرار مع تحديد مسارين واضحين (نعم / لا).</span>
+                    </div>
+                </label>
+                <label class="flex items-start gap-3 p-4 rounded-xl border border-slate-100 hover:bg-slate-50 cursor-pointer transition">
+                    <input type="checkbox" class="check-item w-5 h-5 mt-0.5 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500" onchange="updateProgress()">
+                    <div>
+                        <span class="font-bold block text-slate-800">🧠 منطق المخطط:</span>
+                        <span class="text-sm text-slate-600">جميع المسارات مغلقة وتنتهي عند نقطة النهاية نفسها دون أطراف معلقة.</span>
+                    </div>
+                </label>
+                <label class="flex items-start gap-3 p-4 rounded-xl border border-slate-100 hover:bg-slate-50 cursor-pointer transition">
+                    <input type="checkbox" class="check-item w-5 h-5 mt-0.5 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500" onchange="updateProgress()">
+                    <div>
+                        <span class="font-bold block text-slate-800">🎨 التنسيق البصري:</span>
+                        <span class="text-sm text-slate-600">الأسهم واضحة وغير متقاطعة قدر الإمكان والخط مقروء.</span>
+                    </div>
+                </label>
+                <label class="flex items-start gap-3 p-4 rounded-xl border border-slate-100 hover:bg-slate-50 cursor-pointer transition">
+                    <input type="checkbox" class="check-item w-5 h-5 mt-0.5 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500" onchange="updateProgress()">
+                    <div>
+                        <span class="font-bold block text-slate-800">🛠️ التسمية والتصدير الصحيح:</span>
+                        <span class="text-sm text-slate-600">الملف مسمى بـ (اسمي_مخطط_الصيانة) ومصدر بصيغة صورة أو PDF.</span>
+                    </div>
+                </label>
+            </div>
+
+            <!-- أدوات مساعدة بديلة -->
+            <div class="bg-indigo-50/60 p-4 rounded-xl border border-indigo-100 mt-6">
+                <span class="font-bold text-indigo-900 text-sm block mb-1">🛠️ خيارات وأدوات بديلة مقبولة:</span>
+                <p class="text-xs text-indigo-800">يمكنك استخدام منصات مثل ([تمّت إزالة الرابط المريب], Canva Whiteboard, Lucidchart) بنفس الوظائف والأشكال الأساسية.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- الفوتر -->
+    <footer class="bg-slate-900 text-slate-400 py-6 text-center text-sm border-t border-slate-800">
+        <p>دليل مشروع التقنية الرقمية للصف الثالث الثانوي • تم التصميم ليكون المرجع المثالي للطالبات المعلمات</p>
+    </footer>
+
+    <!-- النوافذ المنبثقة (Modals) -->
+    <!-- نافذة الشرح -->
+    <div id="explainModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center p-4 z-50">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 space-y-4 text-right shadow-2xl">
+            <h3 class="text-xl font-bold text-slate-900">🎬 محاكاة شرح رسم المخطط</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+                1. افتحي موقع [تمّت إزالة الرابط المريب] وابدئي بسحب شكل Oval من القائمة اليسرى لتمثيل البداية.<br>
+                2. اسحبي شكل Rectangle واكتبي داخله العملية الأولى "فحص وحدات التخزين".<br>
+                3. اسحبي شكل Diamond لاتخاذ القرار "هل توجد أخطاء؟"، ثم فرعي منه مساري "نعم" و "لا".<br>
+                4. أنهي المخطط بنفس الشكل البيضاوي وقومي بتصديره.
+            </p>
+            <button onclick="closeModal('explainModal')" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold py-2.5 rounded-xl transition">إغلاق</button>
+        </div>
+    </div>
+
+    <!-- نافذة التفاصيل -->
+    <div id="detailsModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center p-4 z-50">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 space-y-4 text-right shadow-2xl">
+            <h3 class="text-xl font-bold text-slate-900">📋 تفاصيل توزيع الـ 15 درجة</h3>
+            <ul class="text-sm text-slate-600 space-y-2 list-disc list-inside">
+                <li><strong>5 درجات:</strong> الدقة في استخدام الرموز القياسية (بيضاوي، مستطيل، معين).</li>
+                <li><strong>5 درجات:</strong> التسلسل المنطقي وربط جميع الأشكال بنقطة النهاية.</li>
+                <li><strong>3 درجات:</strong> التنسيق والنظافة البصرية والأسهم المستقيمة.</li>
+                <li><strong>درجتان:</strong> التسمية الصحيحة والتسليم في الوقت المحدد بصيغة PNG/PDF.</li>
+            </ul>
+            <button onclick="closeModal('detailsModal')" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold py-2.5 rounded-xl transition">إغلاق</button>
+        </div>
+    </div>
+
+    <!-- نافذة الرفع -->
+    <div id="uploadModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center p-4 z-50">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 space-y-4 text-right shadow-2xl">
+            <h3 class="text-xl font-bold text-slate-900">📤 محاكاة تسليم المشروع</h3>
+            <div class="border-2 border-dashed border-slate-300 rounded-xl p-6 text-center bg-slate-50">
+                <p class="text-sm text-slate-500 mb-2">اسحبي ملف المخطط هنا أو اضغطي للاختيار</p>
+                <span class="text-xs text-slate-400 block">الصيغ المقبولة: PNG, JPG, PDF</span>
+            </div>
+            <button onclick="alert('تمت المحاكاة بنجاح! ملفك جاهز للتقديم للمعلمة.'); closeModal('uploadModal')" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 rounded-xl transition">تأكيد التسليم</button>
+            <button onclick="closeModal('uploadModal')" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold py-2.5 rounded-xl transition">إلغاء</button>
+        </div>
+    </div>
+
+    <!-- JavaScript للتحكم في التفاعلية -->
+    <script>
+        function updateProgress() {
+            const total = document.querySelectorAll('.check-item').length;
+            const checked = document.querySelectorAll('.check-item:checked').length;
+            const percentage = Math.round((checked / total) * 100);
+            
+            document.getElementById('progressBar').style.width = percentage + '%';
+            document.getElementById('progressText').innerText = percentage + '%';
+        }
+
+        function openModal(id) {
+            document.getElementById(id).classList.remove('hidden');
+            document.getElementById(id).classList.add('flex');
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('flex');
+            document.getElementById(id).classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
